@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './view/screen/home_screen.dart';
+import './view/widget/bottom_navigation_widget.dart';
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: const HomeScreen(),
+      home: const BottomNaviagotorBarWidget(),
     );
   }
 }
