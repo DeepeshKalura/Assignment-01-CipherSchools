@@ -21,24 +21,27 @@ class _BottomNaviagotorBarWidgetState extends State<BottomNaviagotorBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      currentIndex: selectedItem,
-      elevation: 1,
-      onTap: (index) {
-        setState(() {
-          selectedItem = index;
-        });
-      },
-      items: const [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.school),
-          label: 'Courses',
-        ),
-      ],
+    return Scaffold(
+      body: listOfScreens[selectedItem],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedItem,
+        elevation: 1,
+        onTap: (int index) {
+          setState(() {
+            selectedItem = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'Courses',
+          ),
+        ],
+      ),
     );
   }
 }

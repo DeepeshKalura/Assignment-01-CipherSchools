@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './view/widget/bottom_navigation_widget.dart';
+import 'view/widget/bottom_navigation_widget.dart';
 
 void main() => runApp(const MyApp());
 

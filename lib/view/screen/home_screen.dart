@@ -89,16 +89,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           ),
                           // TODO: Can made a package for this half skill
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.5,
-                            width: double.infinity,
-                            color: Colors.black,
-                          ),
-                          Container(
-                            height: MediaQuery.of(context).size.height * 0.5,
-                            width: double.infinity,
-                            color: Colors.black,
-                          ),
                         ],
                       ),
                     ],

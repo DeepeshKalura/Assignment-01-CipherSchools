@@ -18,30 +18,32 @@ class _CourseScreenState extends State<CourseScreen> {
         ),
         body: Column(
           children: [
-            ListView(
-              // TODO: Making Exactly like course screen Shown in ClipherSchool and with auto changing feature
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  width: double.infinity,
-                  color: Colors.red,
-                ),
-              ],
+            Expanded(
+              child: ListView(
+                // TODO: Making Exactly like course screen Shown in ClipherSchool and with auto changing feature
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    width: double.infinity,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    width: double.infinity,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    width: double.infinity,
+                    color: Colors.red,
+                  ),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.6,
+                    width: double.infinity,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
             ),
             Row(
               // TODO: Complete this Row
