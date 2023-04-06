@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:typing_animation/typing_animation.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -13,18 +16,38 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          elevation: 2,
           title: Row(
-            // TODO: Adding Logo of ClipherSchool and cloning look remains
-            children: const [
-              Icon(Icons.home),
-              Text('ClipherSchool'),
+            children: [
+              SizedBox(
+                height: 40,
+                width: 40,
+                child: Image.asset(
+                  'assets/logo/Cipherschools_icon.png',
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 3),
+                child: Text(
+                  'ClipherSchool',
+                  style: TextStyle(
+                    fontSize: 21,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ],
           ),
           backgroundColor: Colors.white,
           actions: [
-            // TODO: Adding A Drawer Look
             IconButton(
-              icon: const Icon(Icons.drafts),
+              icon: SizedBox(
+                height: 50,
+                width: 50,
+                child: SvgPicture.asset(
+                  'assets/svg/drawer_icon.svg',
+                ),
+              ),
               onPressed: () {},
             ),
           ],
