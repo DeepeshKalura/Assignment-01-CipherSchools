@@ -15,7 +15,18 @@ class PromotionContainerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color.fromRGBO(53, 58, 66, 1),
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(53, 58, 66, 1),
+        borderRadius: BorderRadius.circular(10.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromRGBO(53, 58, 66, 1),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
