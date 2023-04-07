@@ -194,17 +194,95 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Row(
-                // TODO: Excactly copying look
-                children: const [
-                  Text("15K +"),
-                  Text("Students"),
-                ],
+              const RowRichTextWidget(
+                mainString_1: '15K+',
+                mainString_2: '10K+',
+                bodyString_1: 'Students',
+                bodyString_2: 'Cerification delivered',
+              ),
+              const RowRichTextWidget(
+                mainString_1: '15K+',
+                mainString_2: '10K+',
+                bodyString_1: 'Students',
+                bodyString_2: 'Cerification delivered',
+              ),
+              const RowRichTextWidget(
+                mainString_1: '15K+',
+                mainString_2: '10K+',
+                bodyString_1: 'Students',
+                bodyString_2: 'Cerification delivered',
               ),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class RowRichTextWidget extends StatelessWidget {
+  final String mainString_1;
+  final String mainString_2;
+  final String bodyString_1;
+  final String bodyString_2;
+  const RowRichTextWidget({
+    super.key,
+    required this.mainString_1,
+    required this.mainString_2,
+    required this.bodyString_1,
+    required this.bodyString_2,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: mainString_1,
+                style: const TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
+              TextSpan(
+                text: '\n$bodyString_1',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: mainString_2,
+                style: const TextStyle(
+                  color: Colors.orange,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                ),
+              ),
+              TextSpan(
+                text: '\n$bodyString_2',
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 14.0,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
