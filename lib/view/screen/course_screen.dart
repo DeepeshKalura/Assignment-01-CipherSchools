@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import '../widget/course_column_container_widget.dart';
+import '../widget/course_column_widget.dart';
 import '../widget/course_container_widget.dart';
 import '../widget/myappbar_widget.dart';
 
@@ -34,6 +36,8 @@ class _CourseScreenState extends State<CourseScreen> {
         appBar: const MyAppBarWidget(),
         body: SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -74,46 +78,35 @@ class _CourseScreenState extends State<CourseScreen> {
                   ),
                 ],
               ),
-              Row(
-                // TODO: Complete this Row
-                children: [
-                  const Text("Recommended Courses"),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Popular >'),
+              const CourseColumnWidget(title: "Recommended Courses"),
+              const CourseColumnWidget(title: "Latest Videos"),
+              const CourseColumnWidget(title: "Popular Categories"),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),
+                child: Text(
+                  'All Courses',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
+                ),
               ),
-              Row(
-                // TODO: Complete this Row
-                children: [
-                  const Text("Latest Courses"),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Popular >'),
+              ConstrainedBox(
+                constraints: const BoxConstraints(
+                  maxHeight: 500,
+                ),
+                child: GridView.builder(
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return const CourseCardContainerWidget();
+                  },
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2 / 3,
+                    crossAxisSpacing: 2,
                   ),
-                ],
-              ),
-              Row(
-                // TODO: Complete this Row
-                children: [
-                  const Text("Popular Categories"),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Popular >'),
-                  ),
-                ],
-              ),
-              Row(
-                // TODO: Complete this Row
-                children: [
-                  const Text('All Courses'),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text('Popular >'),
-                  ),
-                ],
-              ),
+                ),
+              )
             ],
           ),
         ),
