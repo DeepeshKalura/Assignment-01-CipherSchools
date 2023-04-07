@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:typing_animation/typing_animation.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
+import '../widget/promotion_container_widget.dart';
 import '../widget/ratings_row_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -136,6 +138,59 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontSize: 20,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 20,
+                  bottom: MediaQuery.of(context).size.height / 20,
+                ),
+                child: CarouselSlider(
+                  items: const [
+                    PromotionContainerWidget(
+                      firstText: 'Promotion 1',
+                      secondText: 'Description of Promotion 1',
+                      iconData: Icons.star,
+                    ),
+                    PromotionContainerWidget(
+                      firstText: 'Promotion 2',
+                      secondText: 'Description of Promotion 2',
+                      iconData: Icons.local_offer,
+                    ),
+                    PromotionContainerWidget(
+                      firstText: 'Promotion 3',
+                      secondText: 'Description of Promotion 3',
+                      iconData: Icons.star,
+                    ),
+                    PromotionContainerWidget(
+                      firstText: 'First Promotion',
+                      secondText: 'This is the first promotion.',
+                      iconData: Icons.star,
+                    ),
+                    PromotionContainerWidget(
+                      firstText: 'Second Promotion',
+                      secondText: 'This is the second promotion.',
+                      iconData: Icons.favorite,
+                    ),
+                    PromotionContainerWidget(
+                      firstText: 'Third Promotion',
+                      secondText: 'This is the third promotion.',
+                      iconData: Icons.thumb_up,
+                    ),
+                  ],
+                  options: CarouselOptions(
+                    height: 200,
+                    autoPlay: true,
+                    // aspectRatio: 2 / 2,
+                    autoPlayInterval: const Duration(seconds: 3),
+                    autoPlayAnimationDuration:
+                        const Duration(milliseconds: 800),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                    enlargeCenterPage: true,
+                    scrollDirection: Axis.horizontal,
+                    viewportFraction: 0.6,
+                    aspectRatio: 16 / 9,
                   ),
                 ),
               ),
