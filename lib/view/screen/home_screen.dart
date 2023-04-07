@@ -6,6 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 
 import '../widget/promotion_container_widget.dart';
 import '../widget/ratings_row_widget.dart';
+import '../widget/rich_text_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -201,88 +202,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 bodyString_2: 'Cerification delivered',
               ),
               const RowRichTextWidget(
-                mainString_1: '15K+',
-                mainString_2: '10K+',
-                bodyString_1: 'Students',
-                bodyString_2: 'Cerification delivered',
+                mainString_1: '450K+',
+                mainString_2: '12TB+',
+                bodyString_1: 'Streaming minutes',
+                bodyString_2: 'Content Streaming',
               ),
               const RowRichTextWidget(
-                mainString_1: '15K+',
+                mainString_1: '50+',
                 mainString_2: '10K+',
-                bodyString_1: 'Students',
-                bodyString_2: 'Cerification delivered',
+                bodyString_1: 'Creators',
+                bodyString_2: 'Program Available',
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class RowRichTextWidget extends StatelessWidget {
-  final String mainString_1;
-  final String mainString_2;
-  final String bodyString_1;
-  final String bodyString_2;
-  const RowRichTextWidget({
-    super.key,
-    required this.mainString_1,
-    required this.mainString_2,
-    required this.bodyString_1,
-    required this.bodyString_2,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: mainString_1,
-                style: const TextStyle(
-                  color: Colors.orange,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                ),
-              ),
-              TextSpan(
-                text: '\n$bodyString_1',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14.0,
-                ),
-              ),
-            ],
-          ),
-        ),
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: mainString_2,
-                style: const TextStyle(
-                  color: Colors.orange,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                ),
-              ),
-              TextSpan(
-                text: '\n$bodyString_2',
-                style: const TextStyle(
-                  color: Colors.black,
-                  fontSize: 14.0,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
