@@ -139,11 +139,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Container(
-                height: 100,
-                width: 100,
-                color: Colors.black,
-              ),
               Row(
                 // TODO: Excactly copying look
                 children: const [
